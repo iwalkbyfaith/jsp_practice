@@ -50,16 +50,7 @@
 	%>
 	
 	<h2>랜덤 구구단 <%=ranNum() %>단</h2>
-	<p>이번에 나올 구구단은 <%=ranNum%>단 입니다.</p>
-	
-	<% 
-	 for(int i=1; i<10; i++){
-		 out.println(ranNum + " * " + i + " = " + ranNum*i + "<br/>");
-	 }
-	
-	
-	%>
-	 
+	<p>이번에 나올 구구단은 "<ranNum>"단 입니다.</p>
 	
 	
 	

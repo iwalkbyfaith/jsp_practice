@@ -24,20 +24,12 @@
 		
 		int num = 0;
 		int num(){
-			if(num == 10){
+			if(num == 11){
 			return num = 1;
 			}else{
 			 return ++num;
 			}
 		}
-		
-		// 랜덤 구구단
-		int ranNum;
-		int ranNum(){
-			return ranNum = (int)(Math.random()*8)+2;
-		}
-		
-		
 	%>
 	
 	
@@ -48,18 +40,6 @@
 		out.println("당첨되셨습니다!");	
 	}
 	%>
-	
-	<h2>랜덤 구구단 <%=ranNum() %>단</h2>
-	<p>이번에 나올 구구단은 <%=ranNum%>단 입니다.</p>
-	
-	<% 
-	 for(int i=1; i<10; i++){
-		 out.println(ranNum + " * " + i + " = " + ranNum*i + "<br/>");
-	 }
-	
-	
-	%>
-	 
 	
 	
 	

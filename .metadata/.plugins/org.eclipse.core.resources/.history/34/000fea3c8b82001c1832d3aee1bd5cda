@@ -54,7 +54,7 @@
 	
 	<% 
 	 for(int i=1; i<10; i++){
-		 out.println(ranNum + " * " + i + " = " + ranNum*i + "<br/>");
+		 out.println(ranNum + " * " + i + " = " + ranNum*i);
 	 }
 	
 	
