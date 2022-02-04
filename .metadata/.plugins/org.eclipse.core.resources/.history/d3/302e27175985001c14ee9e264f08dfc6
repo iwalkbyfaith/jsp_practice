@@ -1,0 +1,35 @@
+<!-- 로그인 구현 (받는)
+
+	아이디 : lovedtr
+	비밀번호 : qwer1234
+	
+	해당 아이디와 비밀번호를 모두 맞게 폼에서 날려준 경우는 "xx 님 환영합니다"
+	하나라도 틀렸다면 "로그인에 실패했습니다" 가 나오도록
+
+
+ -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+    
+<%
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");
+
+
+
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	받은 아이디 : <%=id %> <br/>
+	받은 비밀번호 : <%=pw %>
+
+</body>
+</html>

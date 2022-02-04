@@ -1,0 +1,42 @@
+<!-- 회원가입 (받는) -->
+
+
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+
+<%
+
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");
+	String name = request.getParameter("name");
+	String age = request.getParameter("age");
+
+
+
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<%if(id.equals("abcd")){ %>
+	<b><i>중복된 아이디로 가입할 수 없습니다.</i></b>
+	<%}else{ %>
+	<h2><%=id %>(<%=name %>)님 회원가입을 축하드립니다.</h2>
+		<hr>
+		<h3>입력 정보를 확인하세요</h3>
+		아이디 : <%=id %><br/>
+		비밀번호 : <%=pw %><br/>
+		이름 : <%=name %><br/>
+		나이 : <%=age %><br/>
+		<hr>
+	<%} %>
+		
+
+</body>
+</html>

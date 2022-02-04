@@ -1,0 +1,26 @@
+<!-- response 기초 (받는) -->
+
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<%
+	
+	// 1. 보낸 age를 받아서 정수로 바꿔서 저장해주세요.
+	String strAge = request.getParameter("age");
+	int age = Integer.parseInt(strAge);
+
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	나이 : <%= age %>
+
+</body>
+</html>
