@@ -35,12 +35,8 @@
 
 <%
 	
-	// 라디오 버튼에서 값을 받는다.
-	// 라디오 버튼은 하나의 값만 들어올 수 있으므로 배열로 안 받아도 됨.
 	String travel = request.getParameter("travel");
 
-	// if문을 사용해서 라디오에서 입력된 값과 비교해서 다른 페이지로 이동하는 로직을 만듦.
-	// 바로 이동하기 때문에 이 페이지는 약간 스쳐가는 정거장 같은 느낌.(사용자는 바로 다른 페이지가 보임)
 	if(travel.equals("india")){
 		response.sendRedirect("travel_india.jsp");
 	}else if(travel.equals("bali")){

@@ -22,7 +22,7 @@
 		<input type="radio" name="travel" value="india"/>인도
 		<input type="radio" name="travel" value="bali"/>발리
 		<input type="radio" name="travel" value="yangyang"/>양양
-		<input type="radio" name="travel" value="jeju"/>제주&nbsp;
+		<input type="radio" name="travel" value="jeju"/>제주
 		
 		<input type="submit" value="고고싱"/>	
 	</form>
