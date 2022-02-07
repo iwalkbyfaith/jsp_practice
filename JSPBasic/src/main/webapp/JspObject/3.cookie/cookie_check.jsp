@@ -18,6 +18,7 @@
 	
 	boolean flag = false;
 	
+	// 향상된 for문을 이용하는 것이 더 좋았을 것.
 	for(int i=0; i< cookies.length; i++){
 		// 쿠키 이름을 얻어오는 메서드
 		str = cookies[i].getName();

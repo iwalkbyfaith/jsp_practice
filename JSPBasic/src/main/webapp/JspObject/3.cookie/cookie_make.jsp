@@ -12,7 +12,7 @@
     
 <%
 
-	// 1. 쿠키 생성
+	// 1. 쿠키 객체 생성 ("쿠키네임", "쿠키밸류")
 	Cookie apple = new Cookie("apple_cookie", "사과맛");
 	Cookie peanut = new Cookie("peanut_cookie", "땅콩맛");
 	

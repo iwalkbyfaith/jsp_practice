@@ -1,0 +1,57 @@
+<!-- 로그인 로직
+
+	폼에서 날아온 데이터들을 저장해주세요.
+	
+	만약 자동 로그인이 되어 있다면 쿠키를 생성해주시고
+	cookie name 값은 "auto_login", value 값은 전달받은 아이디로 해주세요.
+	쿠키 유효 시간은 50초입니다.
+	쿠키가 생성되었건 말건 cookie_welcome.jsp로 리다이렉트 시켜줍니다.
+	
+	만약 로그인에 실패했다면 body태그 내에
+	"로그인에 실패했습니다." 라는 문구와 함께 a 태그를 이용해 로그인 화면으로 돌아가는 로직을
+	대신 볼 수 있도록 처리해주세요.
+	
+	아이디는 "abc1234"이고, 비밀번호는 "aaa1111"인 경우 로그인을 허용합니다.
+	
+
+
+
+ -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%
+	
+	// 폼에서 날아온 데이터 저장
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");
+	String auto = request.getParameter("auto");
+	
+	// null 인 경우가 있기 때문에, .equals말고 !=null을 쓴다.
+	if(auto != null){
+		Cookie user1 = new Cookie("auto_login", id);
+		user1.setMaxAge(50);
+		response.addCookie(user1);
+	}
+	
+	
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<%if(id.equals("abc1234") && pw.equals("aaa1111")){ 
+		response.sendRedirect("cookie_welcome.jsp");
+	}else{%>
+		<h1>로그인에 실패했습니다.</h1>
+		<a href="cookie_login.jsp">다시 로그인하기</a>
+	<%} %>
+	
+	
+</body>
+</html>

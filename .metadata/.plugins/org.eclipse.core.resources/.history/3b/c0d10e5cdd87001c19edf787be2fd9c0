@@ -1,0 +1,17 @@
+<!-- 버스카드 판독기 (미성년자) -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>청소년</title>
+</head>
+<body>
+	<a href="bus_form.jsp">
+		<img src="repository/1. junior.jpg"/>
+	</a>
+	<h1>청소년입니다.</h1>
+</body>
+</html>
