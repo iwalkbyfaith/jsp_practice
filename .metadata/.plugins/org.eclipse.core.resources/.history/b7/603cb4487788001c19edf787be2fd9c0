@@ -1,0 +1,47 @@
+<!-- 세션 생성(연결)
+
+	세션에 저장된 데이터는 브라우저 창이 종료될 때까지, 혹은 세션의 유효시간이 만료되기 전까지
+	웹 어플리케이션의 모든 JSP페이지에서 사용할 수 있습니다.
+	
+	세션에 저장된 데이터를 가져오려면 session 객체의 getAttribute() 메서드를 사용하며,
+	매개 값으로 가져올 데이터의 세션 이름을 적어줍니다.
+	(request.getParameter와 유사함)	
+	
+	
+	session_insert.jsp / session_check.jsp
+		1. 사용자 브라우저에서 session.insert 페이지에 접속하면 순서대로 코드를 실행하여
+		2. 서버의 세션 영역(세션 스토리지)에 .setAttribute로 입력된 데이터들을 저장한다.
+		3. .setMaxInactiveInterval을 사용해서 세션 시간을 설정한다.
+		4. 화면에 표출		
+		
+	
+		
+		
+
+
+ -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+    
+<%
+	
+	// 유저 아이디에 "id_session"의 값을 저장하기 => ("abc1234")
+		// String userId = session.getAttribute("id_session"); => 오류
+		// 우항을 String으로 바꿔주는 작업이 필요.
+	String userId = (String)session.getAttribute("id_session");
+	out.println(userId + "<br/>");
+
+
+%>    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>
