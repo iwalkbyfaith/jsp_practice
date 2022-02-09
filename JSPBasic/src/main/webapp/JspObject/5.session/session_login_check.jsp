@@ -36,14 +36,14 @@
 	// 로그인 안한 사용자를 로그인 페이지로 이동시키기 (혹시 문제가 이게 아니었나?)
 		// 내 답
 		String id = (String)session.getAttribute("session_id");
-		//if(id == null){
-		//	response.sendRedirect("session_login.jsp");
-		//}
+		if(id == null){
+			response.sendRedirect("session_login.jsp");
+		}
 	
 		// 선생님 답
-		if(id != null){
-			response.sendRedirect("session_welcome.jsp");
-		}
+		//if(id != null){
+		//	response.sendRedirect("session_welcome.jsp");
+		//}
 
 %>
 <!DOCTYPE html>
