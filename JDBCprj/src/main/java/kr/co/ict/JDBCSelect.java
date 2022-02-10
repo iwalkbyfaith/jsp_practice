@@ -47,7 +47,7 @@ public class JDBCSelect {
 				Statement stmt = con.createStatement();
 			
 			// .executeQuery() 내부에 실행할 쿼리문을 매개 변수로 작성합니다.
-			// ★ 변수명.executeQuery("실행할 쿼리문"); => select 구문일때 사용
+			// ★ 변수명.executeQuery("실행할 쿼리문"); => SELECT 구문일때 사용
 			// ★ 변수명.executeUpdate()는 SELECT 이외의 구문, INSERT와 DELETE, UPDATE를 실행할 때 씁니다.
 			// SELECT문을 실행한 결과 자료는 ResultSet이라는 자료로 받을 수 있습니다.
 				ResultSet rs = stmt.executeQuery("SELECT * FROM userinfo");

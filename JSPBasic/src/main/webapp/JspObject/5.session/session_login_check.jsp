@@ -33,14 +33,14 @@
 		response.sendRedirect("session_welcome.jsp");
 	}
 	
-	// 로그인 안한 사용자를 로그인 페이지로 이동시키기 (혹시 문제가 이게 아니었나?)
+	// 로그인 안한 사용자(null)를 로그인 페이지로 이동시키기 (혹시 문제가 이게 아니었나?)
 		// 내 답
-		String id = (String)session.getAttribute("session_id");
-		if(id == null){
-			response.sendRedirect("session_login.jsp");
-		}
+		//String id = (String)session.getAttribute("session_id");
+		//if(id == null){
+		//	response.sendRedirect("session_login.jsp");
+		//}
 	
-		// 선생님 답
+		// 선생님 답 (이거는 로그인한 사용자가 들어왔을때인듯)
 		//if(id != null){
 		//	response.sendRedirect("session_welcome.jsp");
 		//}
