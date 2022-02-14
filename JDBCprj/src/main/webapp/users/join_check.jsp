@@ -50,8 +50,8 @@
 	
 		// 2. 쿼리문 작성 및 pstmt 생성
 		String sql = "INSERT INTO userinfo VALUES(?, ?, ?, ?)";
-		
 		PreparedStatement pstmt = con.prepareStatement(sql);
+		
 		// 물음표에 넣는 순서는 DB에서의 순서대로 넣으면 됨.
 		pstmt.setString(1, fName);
 		pstmt.setString(2, fId);

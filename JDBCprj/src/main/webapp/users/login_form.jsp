@@ -7,6 +7,17 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%
+	// 로그인한 사용자가 폼으로 넘어오면 웰컴 페이지로 리다이렉트시키기 (나중에 추가된 내용)
+	String sId = (String)session.getAttribute("session_id");
+
+	if(sId != null){
+		response.sendRedirect("login_welcome.jsp");
+	}
+	
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +33,8 @@
 		<input type="reset" value="초기화"/>
 		<input type="submit" value="로그인하기"/>
 	</form>
+	
+	<a href="join_form.jsp">회원 가입하기</a>
 
 </body>
 </html>
