@@ -35,9 +35,7 @@
 		int ranNum;
 		int ranNum(){
 			return ranNum = (int)(Math.random()*8)+2;
-		}
-		
-		
+		}	
 	%>
 	
 	
@@ -55,9 +53,7 @@
 	<% 
 	 for(int i=1; i<10; i++){
 		 out.println(ranNum + " * " + i + " = " + ranNum*i + "<br/>");
-	 }
-	
-	
+	 }	
 	%>
 	 
 	

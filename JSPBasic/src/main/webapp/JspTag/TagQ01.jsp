@@ -59,13 +59,13 @@
 	
 	<%
 		// 변수 total은 declaration에 선언되었기 때문에 새로고침할때마다 값이 누적된다.
-		out.println(++total);
+		out.println("선언자에서 선언한 변수 total : " + ++total);
 		
 		// 스크립틀릿 내부에 선언한 변수는 '접속시'마다 초기화된다.
 		// 즉 새로고침할때마다 변수 currntNum이 사라졌다가, 생성 + 초기화되고 전위수식으로 +1되는 구조.
 		int currentNum =0;
 		out.println("<br/>");
-		out.println(++currentNum);
+		out.println("스크립틀릿에서 선언한 변수 crruntNum : " + ++currentNum);
 	%>
 	
 	

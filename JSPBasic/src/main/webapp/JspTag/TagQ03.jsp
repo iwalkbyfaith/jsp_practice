@@ -1,3 +1,4 @@
+
 <%@page import="java.util.Collections"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -14,7 +15,6 @@
 <body>
 	
 	<%
-	
 	List<Integer> lotto = new ArrayList<>();
 	while(true){
 		// contains(): 리스트 내부에 해당 객체가 존재하면 true를 리턴
@@ -27,20 +27,17 @@
 			break;
 		}
 	}
+	
 	// 리스트의 오름차 정렬 방법
 	Collections.sort(lotto);
-	
-	
 	%>
 
 
 	
 	<h1>로또 번호 생성 결과</h1>
-	
-	<p>이번 주 로또는 이 번호다!! <br>
+	<p> 이번 주 로또는 이 번호다!! <br>
 	
 	<%
-	
 	for(Integer num : lotto){
 		out.println(num + "&nbsp;");
 		// cpu를 잠시 멈추는 메서드 (0.7초동안 기다렸다가 출력)(★기다리기)
