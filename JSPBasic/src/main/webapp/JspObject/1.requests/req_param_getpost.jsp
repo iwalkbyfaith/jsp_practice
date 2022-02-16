@@ -44,18 +44,17 @@
 	
 	전송 받은 아이디 : <%=id %><br/>
 	전송 받은 패스워드: <%=pw %><br/>
-	전송 받은 취미: <%= Arrays.toString(hobby) %>
+	
 	<hr/>
-	<%-- 이런 방법도
+	전송 받은 취미(방법1): <%= Arrays.toString(hobby) %>
+	<br/>
+	전송 받은 취미(방법2) : 
 	<% for(String name : hobby){ %>
 		<%=name %>&nbsp;
 	<%} %>
-	--%>
-	
+	<hr/>	
 	
 	전송 받은 전공 : <%=major %>
 
-	
-	
 </body>
 </html>

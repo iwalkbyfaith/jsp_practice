@@ -16,12 +16,15 @@
     
     
 <%
+	// 폼에서 날라온 데이터를 받아옴
 	String id = request.getParameter("id");
 	String pw = request.getParameter("pw");
 
+	// 데이터에 이미 저장되어있는(것처럼 취급할) 아이디, 비밀번호 변수 만들기
+	// .equals로 비교할 때 선생님은 새로운 변수 안 만들고 (괄호)안에 "abcd" 이런식으로만 하심.
 	String realId = "love";
 	String realPw = "cat1234";
-	// 선생님은 새로운 변수 안 만들고 (괄호)안에 "abcd" 이런식으로만 하심.
+	
 
 %>
 <!DOCTYPE html>

@@ -26,8 +26,6 @@
 	String name = request.getParameter("name");
 	String age = request.getParameter("age");
 
-
-
 %>
 <!DOCTYPE html>
 <html>

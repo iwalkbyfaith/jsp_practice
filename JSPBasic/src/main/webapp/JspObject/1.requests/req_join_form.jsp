@@ -31,6 +31,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<h2>회원 가입 페이지</h2>
 	<form action="req_join_result.jsp" method="post">
 		<input type="text" name="id" placeholder="아이디"/><br/>
@@ -40,7 +41,6 @@
 		
 		<input type="reset" value="초기화하기"/>
 		<input type="submit" value="회원 가입하기"/>
-	
 	
 	</form>
 
