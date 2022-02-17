@@ -26,7 +26,6 @@
 		
 		<input type="submit" value="고고싱"/>	
 	</form>
-
-
+	
 </body>
 </html>

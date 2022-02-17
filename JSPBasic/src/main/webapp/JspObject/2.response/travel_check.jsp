@@ -60,8 +60,5 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
-	<h1>가고 싶은 여행지, <%=travel %></h1>
-	
 </body>
 </html>

@@ -14,7 +14,7 @@
 		<img src="./repository/4. driver.jpg"/>
 		.(점) 은 현재 내가 위치해 있는 폴더을 의미(=4.objecttest)
 	 -->
-	<img src="repository/4. driver.jpg"/>
+	<img src="repository/4. driver.jpg" width="500px" height="300px"/>
 	<form action="bus_check.jsp">
 		당신의 나이는? <input type="number" name="age" placeholder="나이를 입력하세요"/>
 		<input type="submit" value="삐빅"/>	

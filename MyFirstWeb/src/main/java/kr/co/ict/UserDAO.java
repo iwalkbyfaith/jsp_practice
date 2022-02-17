@@ -37,10 +37,11 @@ public class UserDAO {
 		}
 
 	// 사용하기 위해 user_list2-1.jsp를 만들어서 코드 로직을 대체해보자
-		// user_list2-1.jsp에서 전체 유저 목록을 필요로하기 때문에 실행결과로 List<UserVO>를 리턴해줘야합니다.
+		// user_list2-1.jsp에서 전체 유저 목록을 필요로하기 때문에 실행결과로 'List<UserVO>'를 리턴해줘야합니다.
 		// 역시 SELECT 구문을 실행할때에는 리턴자료가 필요하고 (=>List<UserVO)
 		// 데이터가 한개만 나오는 경우는 리턴 자료를 UserVO로 넣는다.
 		// INSERT, DELETE, UPDATE 구문을 실행할때는 리턴자료가 void입니다.
+		// ■■■■■ SELECT * FROM userinfo; ■■■■■
 		public List<UserVO> getAllUserList(){
 			
 			// try블럭 진입 전에 ArrayList 선언
@@ -94,19 +95,24 @@ public class UserDAO {
 		
 		// login_update.jsp의 경우 로그인한 유저 한 명의 데이터만 DB에서 얻어옵니다.
 		// 따라서 그 한 명의 유저 데이터만을 이용해 SELECT 구문을 써야합니다.
-		// login_update.jsp 상단의 sId 변수에 들어있는 유저명을 이용해 유저 데이터를 얻어옵니다.
+		// login_update.jsp 상단의 sId 변수에 들어있는 유저명을 이용해 유저 데이터를 얻어옵니다. (return값은 그 유저의 데이터 목록 name, id, ..)
+		// ■■■■■ SELECT * FROM userinfo WHERE uid=? ■■■■■
 		public UserVO getUserData(String sId) {
 			// 접속 로직은 getAllUserList()와 큰 차이가 없고 쿼리문만 좀 다릅니다.
 			
+			// 1. Connection, PreparedStatement, ResultSet, UserVO 변수 선언만 해주세요
+			//    try 지역 외부에서 써야하는 변수들입니다. (= 가장 상위에 선언해줌) 
 			String newId = sId;
 			Connection con= null;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
-			UserVO user1 = null;
+			UserVO user = null;
 			
-			
+			// 2. try 블럭 내부에서 DB 연결을 해주세요.
+			//    필요한 URL, ID, PW는 상단에 멤버 변수로 이미 존재합니다.
 			try {
 				con = DriverManager.getConnection(dbUrl, dbId, dbPw);
+				// 3. 쿼리문을 날려서 rs에 DB에서 가져온 정보를 받아주세요.
 				String sql = "SELECT * FROM userinfo WHERE uid =?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, newId);
@@ -117,19 +123,20 @@ public class UserDAO {
 					String uId = rs.getString("uid");
 					String uPw = rs.getString("upw");
 					String uEmail = rs.getString("uemail");
-					
-					user1 = new UserVO(uName, uId, uPw, uEmail);
+					// 4. user 변수에 rs에 저장된 데이터를d 담습니다.
+					user = new UserVO(uName, uId, uPw, uEmail);
 	
 				}
-				
+			// 5. catch, finally 블럭을 작성해주시고, finally에서 자원회수까지 마쳐주세요.
 			}catch(Exception e) {
 				e.printStackTrace();
 			}finally {
+				// .close()는 무조건 try 블럭에 있어야 하기 때문에 finally 내부에서 추가로 try블럭 설정
 				try {
 					con.close();
 					pstmt.close();
 					rs.close();
-				}catch(SQLException se) {
+				}catch(SQLException se) { // 그냥 Exception e로 해도 됨(지금 단계에서는. 많이 배우면 너무 복잡하니까)
 					se.printStackTrace();
 				}
 			}
@@ -137,7 +144,7 @@ public class UserDAO {
 			
 			
 			//DB에서 UserVO에 데이터를 받아주신 다음 null 대신 받아온 데이터를 리턴하세요.
-			return user1;
+			return user;
 		}
 		
 		

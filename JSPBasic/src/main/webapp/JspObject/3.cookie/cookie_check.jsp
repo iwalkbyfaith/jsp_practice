@@ -36,7 +36,6 @@
 		out.println("땅콩 쿠키가 사라졌습니다. <br/>");
 	}
 
-
 %>
 <!DOCTYPE html>
 <html>

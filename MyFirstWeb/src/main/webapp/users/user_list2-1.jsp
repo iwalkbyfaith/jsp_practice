@@ -1,4 +1,4 @@
-<!-- 전체 유저 목록 가져오기3 (VO 사용) 
+<!-- 전체 유저 목록 가져오기3 (DAO, List<UserVO> 사용) 
 		
 	user_list2.jsp를 DAO로
 	UserDAO.java 를 활용해서 수십줄의 코드를 두줄로 사용하게 되는 것

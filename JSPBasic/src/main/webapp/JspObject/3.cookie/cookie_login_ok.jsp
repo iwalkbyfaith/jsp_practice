@@ -49,8 +49,6 @@
 	}
 	
 	
-	
-	
 %>
 <!DOCTYPE html>
 <html>
@@ -64,7 +62,6 @@
 	<h1>로그인에 실패했습니다.</h1>
 	<a href="cookie_login.jsp">다시 로그인하기</a>
 
-	
 	
 </body>
 </html>

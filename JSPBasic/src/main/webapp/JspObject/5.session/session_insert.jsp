@@ -25,7 +25,6 @@
 	
 	// 세션 1시간으로 설정
 	session.setMaxInactiveInterval(3600);
-	
 
 %>    
 <!DOCTYPE html>

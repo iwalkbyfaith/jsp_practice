@@ -32,9 +32,6 @@
 			response.sendRedirect("res_child.jsp");
 		}
 	
-	
-	
-	
 %>
 
 <!DOCTYPE html>
@@ -44,8 +41,5 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	나이 : <%= age %>
-
 </body>
 </html>

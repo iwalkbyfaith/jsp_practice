@@ -38,7 +38,7 @@ public class UserVO {
 			this.uEmail = uEmail;
 		}
 			
-		// getter, setter	
+		// getter, setter
 		public String getuId() {
 			return uId;
 		}

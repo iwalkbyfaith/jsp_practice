@@ -24,10 +24,6 @@
 	response.addCookie(apple);
 	response.addCookie(peanut);
 
-
-
-
-
 %>
 <!DOCTYPE html>
 <html>
@@ -39,7 +35,6 @@
 
 	<!-- 4. 쿠키를 확인할 수 있는 사이트로 넘어가기 -->
 	<a href="cookie_check.jsp">쿠키 확인</a>
-
 
 </body>
 </html>
