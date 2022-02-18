@@ -22,8 +22,12 @@
 <%
 	String sName = (String)session.getAttribute("session_name");
 	String sId = (String)session.getAttribute("session_id");
+	String sPw = (String)session.getAttribute("session_pw");
 	
-	// 로그인에 실패했다면(혹은 안했다면), 세션 발급이 없을 것.
+	// 세션에 저장되어있지 않은 값을 가져오려고 한다면?
+	String test = (String)session.getAttribute("text");
+	
+	// 로그인을 안하고 들어왔다면, 세션 발급이 없을 것.
 	if(sId==null){
 		response.sendRedirect("login_form.jsp");
 	}

@@ -48,7 +48,6 @@
 		response.sendRedirect("cookie_welcome.jsp");
 	}
 	
-	
 %>
 <!DOCTYPE html>
 <html>

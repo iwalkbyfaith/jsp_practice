@@ -42,7 +42,7 @@
 		System.out.println(user.getuId());
 		System.out.println(user.getuName());
 		System.out.println(user.getuPw());
-		// 혹은
+		// 혹은 이렇게 한번에 얻어오기
 		System.out.println(user);
 	
 	%>

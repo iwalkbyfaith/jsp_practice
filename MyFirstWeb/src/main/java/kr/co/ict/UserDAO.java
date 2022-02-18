@@ -24,9 +24,8 @@ public class UserDAO {
 		private String dbId = "root";
 		private String dbPw = "mysql";
 		
-		
-	
 	// 생성자를 이용해 생성할 때 자동으로 Class.forName()을 실행하게 만듭니다.	
+		// 어떤 쿼리문을 실행하더라도 공통적으로 활용하는 부분
 		public UserDAO() {
 			try {
 				Class.forName(dbType);

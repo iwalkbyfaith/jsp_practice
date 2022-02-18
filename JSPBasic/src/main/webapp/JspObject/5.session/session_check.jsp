@@ -93,9 +93,6 @@
 		//userId3 = (String)session.getAttribute("JSP");
 		//out.println("JSP 삭제 후 : " + userId3 + "<br/>");
 	
-	
-	
-	
 
 
 %>    
