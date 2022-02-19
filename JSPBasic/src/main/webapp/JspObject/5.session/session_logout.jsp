@@ -4,15 +4,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-
-	String id = (String)session.getAttribute("session_id");
-	String pw = (String)session.getAttribute("session_pw");
-	String nick = (String)session.getAttribute("session_nick");	
+	
+	// 세션 안 가져오고 그냥 바로 삭제 가능.
+	//String id = (String)session.getAttribute("session_id");
+	//String pw = (String)session.getAttribute("session_pw");
+	//String nick = (String)session.getAttribute("session_nick");	
 	
 	// 삭제
 	session.invalidate();
 	
-	// 확인
+	// 확인 (필수는 아님)
 	//if(request.isRequestedSessionIdValid()){
 	//	out.println("유효한 세션 존재");
 	//}else{

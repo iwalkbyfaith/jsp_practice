@@ -148,6 +148,40 @@ public class UserDAO {
 		
 		
 		
+		// 22.02.19 혼자 INSERT 구문 적용해보기
+		public void insertUserDate(String fName, String fId, String fPw, String fEmail) {
+			
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			
+			try {
+				con = DriverManager.getConnection(dbUrl, dbId, dbPw);
+				
+				String sql = "INSERT INTO userinfo VALUES(?, ?, ?, ?)";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, fName);
+				pstmt.setString(2, fId);
+				pstmt.setString(3, fPw);
+				pstmt.setString(4, fEmail);
+				
+				pstmt.executeUpdate();
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+				
+			}finally {
+				try {
+					con.close();
+					pstmt.close();
+					
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
+			
+		}
+		
 		
 		
 }

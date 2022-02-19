@@ -1,10 +1,10 @@
 <!-- 회원가입로직 2) 받은 데이터를 DB로 INSERT 하기
 
-	폼에서 날려준 데이터를 받아서 변수에 저장해주세요.
-	DB 내부에서 중복되는 아이디가 있는지를 체크하는 것은 나중에 한다고 하심.
+	22.02.19 혼자 DAO로 바꿔보기 연습
 
  -->
 
+<%@page import="kr.co.ict.UserDAO"%>
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -35,44 +35,9 @@
 	// 위의 사용자가 입력한 데이터를 토대로 스크립트릿 내부에서 DB 연동을 한 다음 
 	// INSDRT 구문을 실행하도록 만들면 회원가입 절차 구현 가능
 	
-	// 0. 접속 정보 (변수에 넣어 관리하는 것을 권장)
-		String dbType = "com.mysql.cj.jdbc.Driver";
-		String dbUrl = "jdbc:mysql://localhost:3306/jdbcprac1";
-		String dbId = "root";
-		String dbPw = "mysql";
+	UserDAO dao = new UserDAO();
+	dao.insertUserDate(fName, fId, fPw, fEmail);
 	
-	
-	try{
-		
-		// 1. DB 종류 지정 및 연결
-		Class.forName(dbType);
-		Connection con = DriverManager.getConnection(dbUrl, dbId, dbPw);
-	
-		// 2. 쿼리문 작성 및 pstmt 생성
-		String sql = "INSERT INTO userinfo VALUES(?, ?, ?, ?)";
-		PreparedStatement pstmt = con.prepareStatement(sql);
-		
-		// 물음표에 넣는 순서는 DB에서의 순서대로 넣으면 됨.
-		pstmt.setString(1, fName);	
-		pstmt.setString(2, fId);
-		pstmt.setString(3, fPw);
-		pstmt.setString(4, fEmail);
-		
-	
-		// 3. pstmt 실행으로 사용자가 보낸 폼 데이터 DB에 저장
-		pstmt.executeUpdate();
-		
-		// 4. 자원 회수
-		con.close();
-		pstmt.close();
-	
-	}catch(Exception e){
-		e.printStackTrace();
-		
-	}finally{
-		// 5. out.println("회원가입이 완료되었습니다."); 띄워서 가입완료 알리기.
-		out.println("회원가입이 완료되었습니다!");		
-	}
 
 %>    
 <!DOCTYPE html>

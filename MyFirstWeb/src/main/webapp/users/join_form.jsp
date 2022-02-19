@@ -18,7 +18,7 @@
 </head>
 <body>
 	<h1>회원 가입 페이지</h1>
-	<form action="join_check.jsp" method="post">
+	<form action="join_check2.jsp" method="post">
 		<input type="text" name="fid" placeholder="아이디" required/><br/>
 		<input type="password" name="fpw" placeholder="비밀번호" required/><br/>
 		<input type="text" name="fname" placeholder="이름" required/><br/>
