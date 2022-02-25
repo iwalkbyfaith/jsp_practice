@@ -33,7 +33,9 @@
 	
 	// update_check2 여기부터 DAO로 수정됨
 	
-	UserDAO dao = new UserDAO();
+	// UserDAO dao = new UserDAO();
+	// 02.25
+	UserDAO dao = UserDAO.getInstance();
 	dao.userUpdate(fName, fPw, fEmail, sId);
 		
 			

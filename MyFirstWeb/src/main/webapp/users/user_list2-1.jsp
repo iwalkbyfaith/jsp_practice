@@ -34,7 +34,7 @@
 		// 모든 접속 정보는 UserDAO 클래스 내에 있습니다.
 		// 따라서 UserDAO를 생성하는 것으로 접속정보 설정이 끝납니다.
 		// 여기서 DB종류 지정까지 완료가 됨.
-			UserDAO dao = new UserDAO();
+			UserDAO dao = UserDAO.getInstance();
 		
 		// dao 내부에 userinfo 테이블 전체의 데이터를 가져오는
 		// getAllUserList()를 호출하는 것으로 필요 데이터 적재가 끝납니다.

@@ -31,7 +31,9 @@
 		}
 	
 	// member_out2.jsp DAO 추가
-		UserDAO dao = new UserDAO();
+		// UserDAO dao = new UserDAO();
+	// 02.25
+	UserDAO dao = UserDAO.getInstance();
 		dao.deleteUser(sId);
 		
 		// 세션 삭제

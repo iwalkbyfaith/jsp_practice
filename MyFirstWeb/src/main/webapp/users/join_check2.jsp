@@ -35,7 +35,9 @@
 	// 위의 사용자가 입력한 데이터를 토대로 스크립트릿 내부에서 DB 연동을 한 다음 
 	// INSDRT 구문을 실행하도록 만들면 회원가입 절차 구현 가능
 	
-	UserDAO dao = new UserDAO();
+	// UserDAO dao = new UserDAO();
+	// 02.25
+	UserDAO dao = UserDAO.getInstance();
 	dao.insertUserData(fName, fId, fPw, fEmail);
 	
 

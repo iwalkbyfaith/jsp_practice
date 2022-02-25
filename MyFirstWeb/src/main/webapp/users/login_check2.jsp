@@ -35,7 +35,10 @@
 	try{// 선생님 코드에서 try~catch 삭제됨. 근데 별 에러 없으면 일단 내둬보자
 		
 		// DB연결
-		UserDAO dao = new UserDAO();
+		// UserDAO dao = new UserDAO();
+		// 02.25
+		UserDAO dao = UserDAO.getInstance();
+			
 		// SELECT 조건절 구문
 		UserVO user = dao.getUserData(fId);
 		System.out.println("DB에서 받아온 정보 : " + user);

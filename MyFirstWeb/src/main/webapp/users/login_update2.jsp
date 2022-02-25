@@ -30,7 +30,9 @@
 				}
 		
 		// 1.DAO 객체 생성(생성자 메서드가 호출된다.) <= DB 연결
-		UserDAO dao = new UserDAO();
+		// UserDAO dao = new UserDAO();
+		// 02.25
+		UserDAO dao = UserDAO.getInstance();
 		
 		// 2. DAO 내부에서 회원 1명의 정보만 가져오는 getUserData 호출
 		// DAO에 메서드로 관리한 SELECT 구문에 sId(아이디)를 보내고 값을 return 받아서 UserVO user(1명)에 넣음
