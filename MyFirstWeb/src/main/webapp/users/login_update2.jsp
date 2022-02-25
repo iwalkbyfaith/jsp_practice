@@ -48,7 +48,7 @@
 	%>
 	
 	<h1><%=user.getuName() %>(<%=user.getuId() %>)님의 정보를 수정합니다.</h1>
-	<form action="update_check.jsp" method="post">
+	<form action="update_check2.jsp" method="post">
 		<input type="password" name="pw" placeholder="수정할 비밀번호" required/><br/>
 		<input type="text" name="name" placeholder="수정할 이름" value=<%=user.getuName()%> required/><br/>
 		<input type="email" name="email" placeholder="수정할 이메일" value=<%=user.getuEmail()%> required/><br/>

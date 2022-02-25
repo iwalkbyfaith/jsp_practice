@@ -16,6 +16,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mysql.cj.Session;
+
 public class UserDAO {
 	
 	// DB접속에 필요한 변수들을 아래에 선언합니다. (private을 걸어줌)
@@ -149,7 +151,7 @@ public class UserDAO {
 		
 		
 		// 22.02.19 혼자 INSERT 구문 적용해보기
-		public void insertUserDate(String fName, String fId, String fPw, String fEmail) {
+		public void insertUserData(String fName, String fId, String fPw, String fEmail) {
 			
 			Connection con = null;
 			PreparedStatement pstmt = null;
@@ -181,6 +183,88 @@ public class UserDAO {
 			
 			
 		}
+		
+		
+		// update_check2.jsp에 필요한 userUpdate메서드를 아래에 정의해주세요.
+		// UPDATE 구문을 실행하기 위해 리턴자료가 필요 없고, update_check2.jsp에 있는 쿼리문을 실행하기 위해
+		// id, pw, name, email 정보를 모두 받아 옵니다.
+		
+		public void userUpdate(String name, String pw, String email, String id) {
+			
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			
+			try {
+				
+				con = DriverManager.getConnection(dbUrl, dbId, dbPw);
+				
+				String sql = "UPDATE userinfo SET uname=?, upw=?, uemail=? WHERE uid=?";
+				pstmt = con.prepareStatement(sql);
+				
+				pstmt.setString(1, name);
+				pstmt.setString(2, pw);
+				pstmt.setString(3, email);
+				pstmt.setString(4, id);
+				
+				pstmt.executeUpdate();
+				
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+				
+			}finally {
+				try {
+					con.close();
+					pstmt.close();
+					
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
+			
+			
+			
+		}
+		
+		
+		// member_out.jsp에서 사용할 탈퇴기능을 DAO로 이전시키겠습니다.
+		// 메서드명은 deleteUser(String sId)입니다.
+		// DAO파일에 생성하신 후, member_out.jsp에서도 해당 메서드를 쓰도록 고쳐주세요
+		
+		public void deleteUser(String sId) {
+			
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			
+			try {
+				
+				con = DriverManager.getConnection(dbUrl, dbId, dbPw);
+				
+				String sql = "DELETE FROM userinfo WHERE uid=?";
+				
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, sId);
+				
+				pstmt.executeUpdate();
+				
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					con.close();
+					pstmt.close();
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+								
+			}
+			
+		}
+		
+		
+		
 		
 		
 		

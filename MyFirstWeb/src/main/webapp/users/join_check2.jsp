@@ -36,7 +36,7 @@
 	// INSDRT 구문을 실행하도록 만들면 회원가입 절차 구현 가능
 	
 	UserDAO dao = new UserDAO();
-	dao.insertUserDate(fName, fId, fPw, fEmail);
+	dao.insertUserData(fName, fId, fPw, fEmail);
 	
 
 %>    
