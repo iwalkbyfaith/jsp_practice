@@ -35,8 +35,8 @@
 	<hr>
 	● EL식으로 출력하기
 	<!-- parameter로 들어오는 것을 이렇게 받을 수 있음! -->
-	이름 : ${param.name }
-	별명 : ${param.nName }
+	이름 : ${param.name}
+	별명 : ${param.nName}
 
 </body>
 </html>
