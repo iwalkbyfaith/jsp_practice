@@ -3549,3 +3549,77 @@
 2월 28, 2022 11:47:15.996 [4148:13640:0228/114715.995:ERROR:device_event_log_impl.cc(214)] [11:47:15.994] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
 2월 28, 2022 11:47:15.998 [4148:13640:0228/114715.998:ERROR:device_event_log_impl.cc(214)] [11:47:15.997] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
 2월 28, 2022 11:47:20.958 [4148:18384:0228/114720.958:ERROR:database.cc(1777)] History SQLite error: code 1555 errno 0: UNIQUE constraint failed: context_annotations.visit_id sql: INSERT INTO context_annotations( visit_id,context_annotation_flags,duration_since_last_visit,page_end_reason,total_foreground_duration )VALUES(?,?,?,?,?)
+
+3월 02, 2022 09:21:33.316 NEW SESSION
+3월 02, 2022 09:21:33.316 [1432:12788:0302/092133.315:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 09:21:33.317 [1432:12788:0302/092133.315:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+3월 02, 2022 09:21:33.317 [1432:12788:0302/092133.315:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 09:21:33.318 [1432:12788:0302/092133.316:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+3월 02, 2022 09:21:33.318 [1432:3220:0302/092133.318:ERROR:device_event_log_impl.cc(214)] [09:21:33.318] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 09:21:33.321 [1432:3220:0302/092133.321:ERROR:device_event_log_impl.cc(214)] [09:21:33.320] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 09:21:36.964 [1432:10212:0302/092136.964:ERROR:database.cc(1777)] History SQLite error: code 1555 errno 0: UNIQUE constraint failed: context_annotations.visit_id sql: INSERT INTO context_annotations( visit_id,context_annotation_flags,duration_since_last_visit,page_end_reason,total_foreground_duration )VALUES(?,?,?,?,?)
+3월 02, 2022 09:28:57.700 [3600:14032:0302/092857.700:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 09:28:57.700 [3600:14032:0302/092857.700:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+3월 02, 2022 09:28:57.701 [3600:14032:0302/092857.700:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 09:28:57.702 [3600:14032:0302/092857.701:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+3월 02, 2022 09:28:57.703 [3600:6792:0302/092857.703:ERROR:device_event_log_impl.cc(214)] [09:28:57.703] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 09:28:57.706 [3600:6792:0302/092857.706:ERROR:device_event_log_impl.cc(214)] [09:28:57.706] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 09:31:54.417 [3600:1188:0302/093154.416:ERROR:database.cc(1777)] History SQLite error: code 1555 errno 0: UNIQUE constraint failed: context_annotations.visit_id sql: INSERT INTO context_annotations( visit_id,context_annotation_flags,duration_since_last_visit,page_end_reason,total_foreground_duration )VALUES(?,?,?,?,?)
+3월 02, 2022 09:36:24.730 [1672:17024:0302/093624.729:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 09:36:24.731 [1672:17024:0302/093624.730:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+3월 02, 2022 09:36:24.732 [1672:17024:0302/093624.730:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 09:36:24.733 [1672:17024:0302/093624.732:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+3월 02, 2022 09:36:24.734 [1672:13000:0302/093624.734:ERROR:device_event_log_impl.cc(214)] [09:36:24.733] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 09:36:24.736 [1672:13000:0302/093624.736:ERROR:device_event_log_impl.cc(214)] [09:36:24.735] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 10:26:43.91 [1672:2656:0302/102643.091:ERROR:database.cc(1777)] History SQLite error: code 1555 errno 0: UNIQUE constraint failed: context_annotations.visit_id sql: INSERT INTO context_annotations( visit_id,context_annotation_flags,duration_since_last_visit,page_end_reason,total_foreground_duration )VALUES(?,?,?,?,?)
+3월 02, 2022 10:26:43.92 [1672:15052:0302/102643.091:ERROR:database.cc(1777)] History SQLite error: code 1555 errno 0: UNIQUE constraint failed: context_annotations.visit_id sql: INSERT INTO context_annotations( visit_id,context_annotation_flags,duration_since_last_visit,page_end_reason,total_foreground_duration )VALUES(?,?,?,?,?)
+3월 02, 2022 10:26:43.92 [1672:15052:0302/102643.092:ERROR:database.cc(1777)] History SQLite error: code 1555 errno 0: UNIQUE constraint failed: context_annotations.visit_id sql: INSERT INTO context_annotations( visit_id,context_annotation_flags,duration_since_last_visit,page_end_reason,total_foreground_duration )VALUES(?,?,?,?,?)
+3월 02, 2022 10:26:49.207 [19388:19156:0302/102649.206:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 10:26:49.207 [19388:19156:0302/102649.206:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+3월 02, 2022 10:26:49.208 [19388:19156:0302/102649.206:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 10:26:49.209 [19388:19156:0302/102649.209:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+3월 02, 2022 10:26:49.211 [19388:13744:0302/102649.210:ERROR:device_event_log_impl.cc(214)] [10:26:49.210] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 10:26:49.212 [19388:13744:0302/102649.212:ERROR:device_event_log_impl.cc(214)] [10:26:49.212] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 10:27:18.970 [13524:12176:0302/102718.969:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 10:27:18.970 [13524:12176:0302/102718.969:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+3월 02, 2022 10:27:18.971 [13524:12176:0302/102718.969:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 10:27:18.971 [13524:12176:0302/102718.971:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+3월 02, 2022 10:27:18.974 [13524:18660:0302/102718.973:ERROR:device_event_log_impl.cc(214)] [10:27:18.973] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 10:27:18.976 [13524:18660:0302/102718.976:ERROR:device_event_log_impl.cc(214)] [10:27:18.976] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 10:27:57.163 [12852:15064:0302/102757.162:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 10:27:57.163 [12852:15064:0302/102757.162:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+3월 02, 2022 10:27:57.164 [12852:15064:0302/102757.162:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 10:27:57.164 [12852:15064:0302/102757.164:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+3월 02, 2022 10:27:57.166 [12852:4420:0302/102757.166:ERROR:device_event_log_impl.cc(214)] [10:27:57.167] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 10:27:57.169 [12852:4420:0302/102757.169:ERROR:device_event_log_impl.cc(214)] [10:27:57.169] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 10:28:43.930 [11972:312:0302/102843.930:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 10:28:43.931 [11972:312:0302/102843.930:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+3월 02, 2022 10:28:43.932 [11972:312:0302/102843.930:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 10:28:43.932 [11972:312:0302/102843.932:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+3월 02, 2022 10:28:43.934 [11972:2728:0302/102843.934:ERROR:device_event_log_impl.cc(214)] [10:28:43.934] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 10:28:43.937 [11972:2728:0302/102843.936:ERROR:device_event_log_impl.cc(214)] [10:28:43.936] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 10:29:56.235 [12852:11760:0302/102956.235:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 10:29:56.236 [12852:11760:0302/102956.235:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+3월 02, 2022 10:29:56.236 [12852:11760:0302/102956.235:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 10:29:56.238 [12852:11760:0302/102956.237:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+3월 02, 2022 10:29:56.239 [12852:10648:0302/102956.239:ERROR:device_event_log_impl.cc(214)] [10:29:56.239] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 10:29:56.241 [12852:10648:0302/102956.241:ERROR:device_event_log_impl.cc(214)] [10:29:56.241] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 10:46:37.285 [12548:16664:0302/104637.285:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 10:46:37.285 [12548:16664:0302/104637.285:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+3월 02, 2022 10:46:37.286 [12548:16664:0302/104637.285:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 10:46:37.287 [12548:16664:0302/104637.286:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+3월 02, 2022 10:46:37.301 [12548:9600:0302/104637.301:ERROR:device_event_log_impl.cc(214)] [10:46:37.301] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 10:46:37.312 [12548:9600:0302/104637.311:ERROR:device_event_log_impl.cc(214)] [10:46:37.311] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 11:04:58.149 [12580:12256:0302/110458.149:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 11:04:58.149 [12580:12256:0302/110458.149:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+3월 02, 2022 11:04:58.150 [12580:12256:0302/110458.149:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 11:04:58.151 [12580:12256:0302/110458.151:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+3월 02, 2022 11:04:58.153 [12580:17972:0302/110458.152:ERROR:device_event_log_impl.cc(214)] [11:04:58.152] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 11:04:58.155 [12580:17972:0302/110458.155:ERROR:device_event_log_impl.cc(214)] [11:04:58.155] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 11:43:11.776 [17580:8920:0302/114311.776:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 11:43:11.777 [17580:8920:0302/114311.776:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+3월 02, 2022 11:43:11.777 [17580:8920:0302/114311.776:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 11:43:11.778 [17580:8920:0302/114311.778:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+3월 02, 2022 11:43:11.780 [17580:5060:0302/114311.780:ERROR:device_event_log_impl.cc(214)] [11:43:11.780] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 11:43:11.783 [17580:5060:0302/114311.783:ERROR:device_event_log_impl.cc(214)] [11:43:11.782] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 11:45:12.648 [17580:13932:0302/114512.648:ERROR:database.cc(1777)] History SQLite error: code 1555 errno 0: UNIQUE constraint failed: context_annotations.visit_id sql: INSERT INTO context_annotations( visit_id,context_annotation_flags,duration_since_last_visit,page_end_reason,total_foreground_duration )VALUES(?,?,?,?,?)
