@@ -21,7 +21,7 @@
 <body>
 
 	<!-- 서블릿으로 보내기 위해서는 action에 서블릿 접속 주소를 복붙합니다. -->
-	<form action="http://localhost:8181/MyFirstWeb/banana" method="get">
+	<form action="http://localhost:8181/MyFirstWeb/banana" method="post">
 		<input type="text" name="jsp" placeholder="jsp"/><br/>
 		<input type="text" name="boot" placeholder="boot"/><br/>
 		<input type="text" name="jpa" placeholder="jpa"/>
