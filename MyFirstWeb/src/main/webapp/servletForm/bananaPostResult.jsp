@@ -1,4 +1,4 @@
-<!-- post 결과 페이지 
+  <!-- post 결과 페이지 
 
 	bananaform.jsp -> ServletCustom.java -> bananaPostResult.jsp
 
