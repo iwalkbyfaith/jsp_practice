@@ -32,7 +32,8 @@ public class BoardListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 1. 접속시 BoardDAO 생성
+		// 1. 접속시 BoardDAO 생성 (싱글턴 패턴)
+			// dao는 일종의 기지국이라고 생각하면 됨.
 			BoardDAO dao = BoardDAO.getInstance();
 			
 		// 2. BoardDAO의 getAllBoardList() 호출해 전체 게시물 목록 받아오기
@@ -52,7 +53,7 @@ public class BoardListServlet extends HttpServlet {
 			//}
 			
 			// ★ List<BoardVO> boardList를 바로 바인딩할 수도 있다.
-				request.setAttribute("allList", allList);
+				request.setAttribute("allList", allList);	
 			
 		
 		// 4. /board/boardlist.jsp로 포워딩하기

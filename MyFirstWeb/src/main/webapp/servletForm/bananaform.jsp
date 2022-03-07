@@ -6,6 +6,7 @@
 	
 	★ 서블릿으로 보내기 위해서는 action에 서블릿 접속 주소를 복붙합니다.
 
+	bananaform.jsp -> ServletCustom.java ->
 
  -->
 
