@@ -150,6 +150,8 @@
 				   다오로 가서 String sql = "SELECT * FROM boardinfo ORDER BY board_num DESC";
 				   이렇게 오더바이절을 추가해주었다.
 		
+		
+				03.08 추가) 제목을 a태그로 바꿔주고 게시판넘버에 따라 다른 페이지로 이동하도록 만들어줌 ★
 	-->
 	
 		 		<table class="table table-striped">
@@ -167,7 +169,7 @@
 						<c:forEach var="list" items="${allList}" >
 							<tr>
 								<td>${list.boardNum }</td>
-								<td>${list.title }</td>
+								<td><a href="http://localhost:8181/MyFirstWeb/boarddetail?board_num=${list.boardNum}"> ${list.title }</a></td>
 								<td>${list.content }</td>
 								<td>${list.writer }</td>
 								<td>${list.bDate }</td>

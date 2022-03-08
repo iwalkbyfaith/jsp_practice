@@ -141,6 +141,60 @@ public class BoardDAO {
 	}
 	
 	
+	// 03.08 추가
+	// 상세 글 페이지를 보여주는 메서드
+	
+		// int인데 String으로 해도 문제가 없음(왜냐면 http에서 날아올 때 String으로 바뀌기도 하기 떄문)
+	public BoardVO getBoardDetail(int board_num){
+		
+		Connection con= null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BoardVO boarddetail = null;
+		
+		
+	
+	try {			
+		con = ds.getConnection();
+		String sql = "SELECT * FROM boardinfo WHERE board_num = ? ";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, board_num);
+		rs = pstmt.executeQuery();
+		
+	
+		if(rs.next()) {
+			int boardNum = rs.getInt("board_num");
+			String title = rs.getString("title");
+			String content = rs.getString("content");
+			String writer = rs.getString("writer");
+			Date bDate = rs.getDate("bdate");
+			Date mDate = rs.getDate("mdate");
+			int hit = rs.getInt("hit");
+			
+			
+			boarddetail = new BoardVO(boardNum, title, content, writer, bDate, mDate, hit);
+
+			
+		}
+		
+	}catch(Exception e) {
+		e.printStackTrace();
+		
+	}finally {
+		
+		try {
+			con.close();
+			pstmt.close();
+			rs.close();
+		}catch(SQLException se) {
+			se.printStackTrace();
+		}
+	}
+	
+	return boarddetail;
+}
+	
+	
 	
 	
 	
