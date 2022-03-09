@@ -7,6 +7,8 @@ C:\eclipse\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3659
 \JDBCprj\src\main\java
 C:\eclipse\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2425202666.index
 \MyFirstWeb\src\main\java
+C:\eclipse\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\357176373.index
+\PracticeProject\src\main\java
 C:\eclipse\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\63284331.index
 \MyFirstWeb\src\main\java
 C:\eclipse\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2744047431.index
@@ -31,9 +33,9 @@ C:\eclipse\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1939
 \JSPBasic\src\main\java
 C:\eclipse\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2677745146.index
 \JSPBasic\src\main\java
-C:\eclipse\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\960576055.index
-\JSPBasic\src\main\java
 C:\eclipse\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2433933944.index
 \JSPBasic\src\main\java
 C:\eclipse\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3924019301.index
+\JSPBasic\src\main\java
+C:\eclipse\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\960576055.index
 \JSPBasic\src\main\java
