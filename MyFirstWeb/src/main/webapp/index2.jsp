@@ -14,6 +14,8 @@
 	<h2>여러분이 welcompage 설정을 고쳐서 index.jsp가 아닌 </h2>
 	<h2>다른 임의의 명칭을 메인 페이지로 만들어 줄 수도 있습니다.</h2>
 	
+	<a href="http://localhost:8181/MyFirstWeb/boardlist">게시판 입장하기</a>
+
 
 </body>
 </html>
