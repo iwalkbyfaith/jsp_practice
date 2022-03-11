@@ -9,8 +9,6 @@
     <fullyQualifiedTypeName name="com.mysql.cj.xdevapi.Session"/>
     <fullyQualifiedTypeName name="javax.naming.InitialContext"/>
     <fullyQualifiedTypeName name="javax.naming.Context"/>
-    <fullyQualifiedTypeName name="kr.co.ict.BoardVO"/>
-    <fullyQualifiedTypeName name="kr.co.ict.BoardDAO"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="javax.sql.DataSource"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
@@ -21,5 +19,7 @@
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="kr.co.daeun.BoardDAO"/>
     <fullyQualifiedTypeName name="kr.co.daeun.BoardVO"/>
+    <fullyQualifiedTypeName name="kr.co.ict.BoardVO"/>
+    <fullyQualifiedTypeName name="kr.co.ict.BoardDAO"/>
     <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 </qualifiedTypeNameHistroy>

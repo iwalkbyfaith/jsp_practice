@@ -180,6 +180,13 @@
 					</tbody>
 		
 				</table>
+				
+				
+				<!-- 03.11 글쓰기 버튼 추가 (선생님은 a 태그 안에 버튼 태그 넣으심)
+				     그리고 나는 바로 폼으로 보냈었는데, 선생님이 주소가 노출될 우려가 있으므로
+				     서블릿을 통해서 이동해야한다고 하셨음.
+				-->				
+				<button><a href="http://localhost:8181/MyFirstWeb/boardInsertForm"> 글쓰기 </a></button>
 	
 	
 	

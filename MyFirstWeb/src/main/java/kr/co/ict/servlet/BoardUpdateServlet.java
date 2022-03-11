@@ -42,11 +42,12 @@ public class BoardUpdateServlet extends HttpServlet {
 		// 다오 생성
 		BoardDAO dao = BoardDAO.getInstance();
 		
-		// 메서드 호출
+		// 메서드 호출 ( mDate도 같이 바뀜 )
 		dao.updateBoard(title, content, boardNum);
 		
 		// 디테일 페이지로 리다이렉트
 		response.sendRedirect("http://localhost:8181/MyFirstWeb/boarddetail?board_num=" + boardNum);
+				
 		
 		
 		// 1. BoardDAO에 updateBoard() 메서드를 생성해주세요
