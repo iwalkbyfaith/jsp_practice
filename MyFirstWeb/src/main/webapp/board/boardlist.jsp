@@ -152,7 +152,7 @@
 		
 		
 				03.08 추가) 제목을 a태그로 바꿔주고 게시판넘버에 따라 다른 페이지로 이동하도록 만들어줌 ★
-	-->
+	
 	
 		 		<table class="table table-striped">
 		
@@ -181,6 +181,36 @@
 		
 				</table>
 				
+	-->
+	
+			<!-- 03.14 커맨드 패턴화를 위한 새로운 복붙 -->
+			
+			 		<table class="table table-striped">
+		
+					<thead>
+						<th>글 번호</th>
+						<th>제목</th>
+						<th>내용</th>
+						<th>작성자</th>
+						<th>작성일</th>
+						<th>수정일</th>
+						<th>조회수</th>
+					</thead>
+					<tbody>
+						<c:forEach var="list" items="${allList}" >
+							<tr>
+								<td>${list.boardNum }</td>
+								<td><a href="http://localhost:8181/MyFirstWeb/boarddetail?board_num=${list.boardNum}"> ${list.title }</a></td>
+								<td>${list.content }</td>
+								<td>${list.writer }</td>
+								<td>${list.bDate }</td>
+								<td>${list.mDate }</td>
+								<td>${list.hit }</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+		
+				</table>
 				
 				<!-- 03.11 글쓰기 버튼 추가 (선생님은 a 태그 안에 버튼 태그 넣으심)
 				     그리고 나는 바로 폼으로 보냈었는데, 선생님이 주소가 노출될 우려가 있으므로
