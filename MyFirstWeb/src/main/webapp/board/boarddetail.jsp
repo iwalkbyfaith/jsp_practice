@@ -46,18 +46,27 @@
 	수정일 : <input type="text" value="${detailBoard.mDate }" readonly> <br/>	<br/>
 	<textarea rows="15" cols="50" readonly>${detailBoard.content }</textarea> <br/>
 	
-	<a href="http://localhost:8181/MyFirstWeb/boardlist">목록으로 돌아가기</a>
+	<a href="http://localhost:8181/MyFirstWeb/boardList.do">목록으로 돌아가기</a>
 	
 	
 	<!-- 글 번호를 입력받아 해당 글을 삭제하기 위한 폼 생성(post만 보내야하니까) -->
 	<!-- 게시판 번호가 보이지 않게 하기 위해서 type="hidden"을 사용한다 (퍼블리싱 복습해야 ㅠ) -->
-	<form action="http://localhost:8181/MyFirstWeb/boardDelete" method="post">
+	
+	<!-- 03.15)
+			action을
+			http://localhost:8181/MyFirstWeb/boardDelete 에서
+			/MyFirstWeb/boardDelete.do
+	
+	 -->
+	<form action="http://localhost:8181/MyFirstWeb/boardDelete.do" method="post">
 		<input type="hidden" name="board_num" value="${detailBoard.boardNum}"/>
 		<input type="submit" value="삭제하기"/>
 	</form>
 	
-	<!-- 글 번호를 입력받아 해당 글을 수정하기 위핸 폼 생성 -->
-	<form action="http://localhost:8181/MyFirstWeb/boardUpdateForm" method="post">
+	<!-- 글 번호를 입력받아 해당 글을 수정하기 위핸 폼 생성 
+		 03.15) action 변경
+	-->
+	<form action="http://localhost:8181/MyFirstWeb/boardUpdateForm.do" method="post">
 		<input type="hidden" name="board_num" value="${detailBoard.boardNum}"/>
 		<input type="submit" value="수정하기"/>
 	</form>

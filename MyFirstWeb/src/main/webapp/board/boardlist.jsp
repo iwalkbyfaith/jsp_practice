@@ -183,7 +183,9 @@
 				
 	-->
 	
-			<!-- 03.14 커맨드 패턴화를 위한 새로운 복붙 -->
+			<!-- 03.14 커맨드 패턴화를 위한 새로운 복붙 
+				 03.15 내부 주소들을 .do 패턴 기반으로 고쳐주세요
+			-->
 			
 			 		<table class="table table-striped">
 		
@@ -200,7 +202,7 @@
 						<c:forEach var="list" items="${allList}" >
 							<tr>
 								<td>${list.boardNum }</td>
-								<td><a href="http://localhost:8181/MyFirstWeb/boarddetail?board_num=${list.boardNum}"> ${list.title }</a></td>
+								<td><a href="http://localhost:8181/MyFirstWeb/boardDetail.do?board_num=${list.boardNum}"> ${list.title }</a></td>
 								<td>${list.content }</td>
 								<td>${list.writer }</td>
 								<td>${list.bDate }</td>
@@ -213,10 +215,11 @@
 				</table>
 				
 				<!-- 03.11 글쓰기 버튼 추가 (선생님은 a 태그 안에 버튼 태그 넣으심)
-				     그리고 나는 바로 폼으로 보냈었는데, 선생님이 주소가 노출될 우려가 있으므로
-				     서블릿을 통해서 이동해야한다고 하셨음.
+				     그리고 나는 바로 폼으로 보냈었는데, 선생님이 주소가 노출될 우려가 있으므로 서블릿을 통해서 이동해야한다고 하셨음.
+				     
+				     03.15 .do 패턴으로 수정
 				-->				
-				<button><a href="http://localhost:8181/MyFirstWeb/boardInsertForm"> 글쓰기 </a></button>
+				<button><a href="/MyFirstWeb/insertForm.do"> 글쓰기 </a></button>
 	
 	
 	

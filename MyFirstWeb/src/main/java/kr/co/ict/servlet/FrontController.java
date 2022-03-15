@@ -9,8 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kr.co.ict.servlet.service.BoardDeleteService;
 import kr.co.ict.servlet.service.BoardDetailService;
+import kr.co.ict.servlet.service.BoardInsertService;
 import kr.co.ict.servlet.service.BoardListService;
+import kr.co.ict.servlet.service.BoardUpdateFormService;
+import kr.co.ict.servlet.service.BoardUpdateService;
 import kr.co.ict.servlet.service.IBoardService;
 
 /**
@@ -63,12 +67,15 @@ public class FrontController extends HttpServlet {
 			// 다형성을 이용해 요청 주소에 따른 처리해줄 서비스 (인터페이스 IBoardService가 하나의 타입이 됨)
 			IBoardService sv = null;
 			
+			System.out.println("현재 주소창에 입력된 .do 패턴 -> " + uri);
 		
 			
 			
 		// if~else문 생성
+			
+			// ■ 모든 게시판 리스트 보기
 			if(uri.equals("/MyFirstWeb/boardList.do")) {
-				
+				System.out.println("/boardList.do로 들어옴");
 				// 다형성에 의해 IBoardService를 구현한 모든 타입을 sv에 저장 가능
 					// IBoardService(부모)에는 온갖 걸(자식들) 다 집어 넣을 수 있는 것 (당연히 상속한 경우)
 				sv = new BoardListService();
@@ -78,15 +85,44 @@ public class FrontController extends HttpServlet {
 				
 				// 포워딩 주소를 ui에 저장함
 				ui = "/board/boardlist.jsp";
-				
+			
+			// ■ 게시판 디테일 보기
 			}else if(uri.equals("/MyFirstWeb/boardDetail.do")){
+				System.out.println("/boardDetail.do로 들어옴");
 				
 				sv = new BoardDetailService();
 				sv.execute(request, response);
 				ui = "/board/boarddetail.jsp";
 				
+			// ■ 게시판 인서트 폼
+			}else if(uri.equals("/MyFirstWeb/insertForm.do")) {
+				ui = "/board/insertBoardForm.jsp";
+	
+			// ■ 게시판 인서트 폼에서 데이터를 받아 DB에 넣는 구문
+			}else if(uri.equals("/MyFirstWeb/insertBoard.do")) {	
+				sv = new BoardInsertService();
+				sv.execute(request, response);
+				ui = "/boardList.do";
 			
-		// 정해진 주소 이외의 주소로 접속했을때 메인 페이지로 보내주는 포워딩 구문을 작성하세요.
+			// ■ 게시판 삭제
+			}else if(uri.equals("/MyFirstWeb/boardDelete.do")) {
+				sv = new BoardDeleteService();
+				sv.execute(request, response);
+				ui = "/boardList.do";
+				
+			// ■ 게시판 수정 폼으로 이동하기
+			}else if(uri.equals("/MyFirstWeb/boardUpdateForm.do")) {
+				sv = new BoardUpdateFormService();
+				sv.execute(request, response);
+				ui = "/board/boardUpdateForm.jsp";
+				
+			// ■ 게시판 수정 폼에서 데이터를 받아 DB에 update 하기 ★ 
+			}else if(uri.equals("/MyFirstWeb/boardUpdate.do")) {
+				sv = new BoardUpdateService();
+				sv.execute(request, response);
+				ui = "/boardDetail.do?board_num=" + request.getParameter("board_num");
+			
+			// ■ 정해진 주소 이외의 주소로 접속했을때 메인 페이지로 보내주는 포워딩 구문을 작성하세요.
 			}else {
 				ui = "/";
 			}
