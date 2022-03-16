@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.co.ict.servlet.service.BoardDeleteService;
 import kr.co.ict.servlet.service.BoardDetailService;
+import kr.co.ict.servlet.service.BoardInsertFormService;
 import kr.co.ict.servlet.service.BoardInsertService;
 import kr.co.ict.servlet.service.BoardListService;
 import kr.co.ict.servlet.service.BoardUpdateFormService;
@@ -96,6 +97,8 @@ public class FrontController extends HttpServlet {
 				
 			// ■ 게시판 인서트 폼
 			}else if(uri.equals("/MyFirstWeb/insertForm.do")) {
+				sv = new BoardInsertFormService();
+				sv.execute(request, response);
 				ui = "/board/insertBoardForm.jsp";
 	
 			// ■ 게시판 인서트 폼에서 데이터를 받아 DB에 넣는 구문

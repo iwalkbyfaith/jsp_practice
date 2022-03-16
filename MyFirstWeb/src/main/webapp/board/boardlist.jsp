@@ -33,8 +33,8 @@
 	
 	-->
 	
-	<!-- 시도1 -->
-	${allList }
+	<!-- 시도1 
+	${allList }-->
 	
   	<hr/>
   
@@ -54,7 +54,7 @@
 	<!-- 내부 요소를 출력하는 방법 : 인덱싱이나 c:forEach를 이용해서 하나하나 꺼내준다음
 		 .변수명을 적으면 출력됩니다.
 	 -->
-	 
+	 <!-- 
 	 전체 데이터 : ${allList[0] }
 	 
 	 <hr>
@@ -68,7 +68,7 @@
 	 3번째 요소 : ${allList[3]}<br/>
 	 
 	 <hr>
-	 
+	  -->
 	 <!-- 시도4 구리지만 뭔가 되긴 됨.
 	 	테이블 밖에 forEach문을 넣었을때 => 구림
 	 	tbody 안에 넣었을때 => 예쁨
@@ -218,9 +218,12 @@
 				     그리고 나는 바로 폼으로 보냈었는데, 선생님이 주소가 노출될 우려가 있으므로 서블릿을 통해서 이동해야한다고 하셨음.
 				     
 				     03.15 .do 패턴으로 수정
-				-->				
-				<button><a href="/MyFirstWeb/insertForm.do"> 글쓰기 </a></button>
-	
+				     03.16 글쓰기 버튼이 로그인한 사람에게만 보이게 수정
+				-->		
+		
+				<c:if test="${sId ne null}"> <!-- 혹은 ${sessionScope.session_id ne null} --> 
+					<button><a href="/MyFirstWeb/insertForm.do"> 글쓰기 </a></button>
+				</c:if>
 	
 	
 

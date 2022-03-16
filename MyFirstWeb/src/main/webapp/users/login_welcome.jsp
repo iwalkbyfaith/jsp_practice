@@ -41,11 +41,16 @@
 </head>
 <body>
 	<h2>로그인 완료 페이지</h2>
-	<%=sName %>(<%=sId %>)님! 로그인을 환영합니다! <br/>
+	<%=sName %>(<%=sId %>)님! 로그인을 환영합니다! <br/><br/>
 	
-	<a href="logout.jsp">로그아웃</a><br/>
-	<a href="login_update2.jsp">정보수정</a><br/>
-	<a href="member_out2.jsp">탈퇴하기</a><br/>
+	<!-- 03.16 수정 전 <a href="http://localhost:8181/MyFirstWeb/boardlist">게시판 입장하기</a> -->
+	<a href="http://localhost:8181/MyFirstWeb/boardList.do">게시판 입장하기</a><br/><br/>
+	<a href="http://localhost:8181/MyFirstWeb/">메인 페이지로</a><br/><br/>
+	
+	
+	<a href="logout.jsp">로그아웃</a> &nbsp;
+	<a href="login_update2.jsp">정보수정</a> &nbsp;
+	<a href="member_out2.jsp">탈퇴하기</a><br/><br/>
 	
 	<!-- user_list2.jsp 생성후 추가된 사항. -->
 	<a href="user_list2-1.jsp">회원목록</a>
