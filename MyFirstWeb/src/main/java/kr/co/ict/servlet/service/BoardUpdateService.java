@@ -2,6 +2,7 @@ package kr.co.ict.servlet.service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.co.ict.BoardDAO;
 
@@ -15,12 +16,19 @@ public class BoardUpdateService implements IBoardService{
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		
-		// 다오 생성
-		BoardDAO dao = BoardDAO.getInstance();
+		// 03.17 글쓴이, 세션 추가
+		//String writer = request.getParameter("writer");
 		
-		// 메서드 호출 ( mDate도 같이 바뀜 )
-		dao.updateBoard(title, content, boardNum);
+		//HttpSession session = request.getSession();
+		//String sId = (String)session.getAttribute("session_id");
 		
+		//if(writer.equals(sId)){
+			// 다오 생성
+			BoardDAO dao = BoardDAO.getInstance();
+			
+			// 메서드 호출 ( mDate도 같이 바뀜 )
+			dao.updateBoard(title, content, boardNum);
+		//}
 		
 		
 		// ★ 서블릿에서는 아래와 같이 boardNum 변수를 넣어서 리다이렉트 해주었는데,

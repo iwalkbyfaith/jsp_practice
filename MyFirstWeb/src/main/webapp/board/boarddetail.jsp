@@ -21,6 +21,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,25 +53,33 @@
 	<!-- 글 번호를 입력받아 해당 글을 삭제하기 위한 폼 생성(post만 보내야하니까) -->
 	<!-- 게시판 번호가 보이지 않게 하기 위해서 type="hidden"을 사용한다 (퍼블리싱 복습해야 ㅠ) -->
 	
-	<!-- 03.15)
+	<!-- 03.15) (삭제)
 			action을
 			http://localhost:8181/MyFirstWeb/boardDelete 에서
 			/MyFirstWeb/boardDelete.do
-	
-	 -->
-	<form action="http://localhost:8181/MyFirstWeb/boardDelete.do" method="post">
-		<input type="hidden" name="board_num" value="${detailBoard.boardNum}"/>
-		<input type="submit" value="삭제하기"/>
-	</form>
-	
+		 03.17) 본인이 쓴게 아니면 삭제, 수정이 안되게
+		 	    히든으로 글쓴이도 같이 보냄
+		  	 -->
+
 	<!-- 글 번호를 입력받아 해당 글을 수정하기 위핸 폼 생성 
-		 03.15) action 변경
+		 03.15) (수정) action 변경
+		 
+		
 	-->
-	<form action="http://localhost:8181/MyFirstWeb/boardUpdateForm.do" method="post">
-		<input type="hidden" name="board_num" value="${detailBoard.boardNum}"/>
-		<input type="submit" value="수정하기"/>
-	</form>
+	<c:if test="${sId eq detailBoard.writer}">
+		<form action="http://localhost:8181/MyFirstWeb/boardDelete.do" method="post">
+			<input type="hidden" name="board_num" value="${detailBoard.boardNum}"/>
+			<input type="hidden" name="writer" value="${detailBoard.writer}"/>
+			<input type="submit" value="삭제하기"/>
+		</form>
 	
+	
+		<form action="http://localhost:8181/MyFirstWeb/boardUpdateForm.do" method="post">
+			<input type="hidden" name="board_num" value="${detailBoard.boardNum}"/>
+			<input type="hidden" name="writer" value="${detailBoard.writer}"/>
+			<input type="submit" value="수정하기"/>
+		</form>
+	</c:if>
 	
 	
 	

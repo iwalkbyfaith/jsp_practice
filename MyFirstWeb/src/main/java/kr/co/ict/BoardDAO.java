@@ -48,7 +48,7 @@ public class BoardDAO {
 	// getAllBoardList() 만들기 (다른 코드 복붙해서 수정하기)
 		// 게시판 글 전체 목록 가져오기 (회원 전체 목록 가져오기를 이용하여 수정)
 	
-	public List<BoardVO> getAllBoardList(){
+	public List<BoardVO> getAllBoardList2(){
 		
 			Connection con= null;
 			PreparedStatement pstmt = null;
@@ -94,6 +94,62 @@ public class BoardDAO {
 		
 		return boardList;
 	}
+	
+	
+	
+	
+	// 03.18 페이징 처리를 위해 원래 메서드를 2로 만들고(원본 남겨두기 위해) 새로 만듦
+	// 페이징 처리를 위해서 페이지 번호를 추가로 입력 받습니다.
+	public List<BoardVO> getAllBoardList(int pageNum){
+		
+		Connection con= null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		List<BoardVO> boardList = new ArrayList<>();
+	
+	try {			
+		con = ds.getConnection();
+		// 쿼리문 내부에서 계산하니까 rs = null로 나와서 새로운 변수를 만들어 미리 계산해서 넣어줌 (이렇게 하니까 됨)
+		int limitNum = ((pageNum-1) * 10);
+		
+		String sql = "SELECT * FROM boardinfo ORDER BY board_num DESC limit ?, 10";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, limitNum);
+		rs = pstmt.executeQuery();
+		
+		// BoardVO ArrayList에 rs에 든 모든 자료를 저장해주세요
+		while(rs.next()) {
+			int boardNum = rs.getInt("board_num");
+			String title = rs.getString("title");
+			String content = rs.getString("content");
+			String writer = rs.getString("writer");
+			Date bDate = rs.getDate("bdate");
+			Date mDate = rs.getDate("mdate");
+			int hit = rs.getInt("hit");
+			
+			
+			BoardVO boardData = new BoardVO(boardNum, title, content, writer, bDate, mDate, hit);
+
+			boardList.add(boardData);
+		}
+		
+	}catch(Exception e) {
+		e.printStackTrace();
+		
+	}finally {
+		
+		try {
+			con.close();
+			pstmt.close();
+			rs.close();
+		}catch(SQLException se) {
+			se.printStackTrace();
+		}
+	}
+	
+	return boardList;
+}
 	
 		
 	// 03.07추가
@@ -152,6 +208,60 @@ public class BoardDAO {
 		ResultSet rs = null;
 		BoardVO boarddetail = null;
 		
+		// 메서드 내부에서 메서드 호출할 수 있음
+			// 조회수를 올리는 로직을 실행한 다음 글 정보 불러오게 처리
+			upHit(board_num);
+	
+	try {			
+		con = ds.getConnection();
+		String sql = "SELECT * FROM boardinfo WHERE board_num = ? ";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, board_num);
+		rs = pstmt.executeQuery();
+		
+	
+		if(rs.next()) {
+			int boardNum = rs.getInt("board_num");
+			String title = rs.getString("title");
+			String content = rs.getString("content");
+			String writer = rs.getString("writer");
+			Date bDate = rs.getDate("bdate");
+			Date mDate = rs.getDate("mdate");
+			int hit = rs.getInt("hit");
+			
+			
+			boarddetail = new BoardVO(boardNum, title, content, writer, bDate, mDate, hit);
+
+			;
+			
+		}
+		
+	}catch(Exception e) {
+		e.printStackTrace();
+		
+	}finally {
+		
+		try {
+			con.close();
+			pstmt.close();
+			rs.close();
+		}catch(SQLException se) {
+			se.printStackTrace();
+		}
+	}
+	
+	return boarddetail;
+}
+	
+	
+	
+	// 03.18 uphit() 없는 버전
+	public BoardVO getBoardDetail2(int board_num){
+		
+		Connection con= null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BoardVO boarddetail = null;
 		
 	
 	try {			
@@ -174,6 +284,7 @@ public class BoardDAO {
 			
 			boarddetail = new BoardVO(boardNum, title, content, writer, bDate, mDate, hit);
 
+			;
 			
 		}
 		
@@ -193,6 +304,7 @@ public class BoardDAO {
 	
 	return boarddetail;
 }
+	
 	
 	
 	// 03.10 추가
@@ -264,6 +376,51 @@ public class BoardDAO {
 		
 		
 	}
+	
+	
+	
+	// 서비스가 아닌 getBoardDetail 실행시 자동으로 같이 실행되도록 처리하겠습니다.
+	// 글 제목을 클릭할때마다 조회수를 상승시키는 메서드
+	// private으로 한 이유는 외부에서 호출할 수 없게 (내부적으로만 호출할 수 있는 메서드)
+		// 문제점) getboarddetial()을 글 조회/ 글 수정할 때 사용함. (내가 질문한거)
+		//   해결 방법 1) getboarddetial()를 복붙해서 getboarddetial2()를 만들어서 둘 중 하나만 포함하게 만들고 상황에 따라서 쓰면 됨.
+		//   해결 방법 2) uphit()을 퍼블릭으로 바꾸고 두 번 호출하면 됨
+	
+		private void upHit(int strBId) {
+			System.out.println("현재 조회된 글 번호 : " + strBId);
+			
+			Connection con = null;
+			PreparedStatement pstmt = null;
+	
+			
+			// UPDATE문에 맞는 접속 로직을 작성해주세요.
+			// 그 다음에 조회수를 1 올려주는 로직을 구현하면 됨.
+			try {
+				con = ds.getConnection();
+				String sql = "UPDATE boardinfo SET hit = (hit+1) WHERE board_num=?";
+				
+				pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1, strBId);
+				pstmt.executeUpdate();
+				
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					con.close();
+					pstmt.close();
+	
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
+			
+		}
+	
+	
+	
 	
 	
 	

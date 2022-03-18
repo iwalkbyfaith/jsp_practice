@@ -15,15 +15,53 @@ import kr.co.ict.BoardVO;
 // BoardListService는 boardlist 접속시 사용하는 로직을 관리합니다.
 public class BoardListService implements IBoardService{
 	
+	
 		// BoardListServlet에서 바인딩까지 복사해오면 됩니다.
 	
 		@Override
 		public void execute(HttpServletRequest request, HttpServletResponse response) {
+			
+			// 03.18 추가) 페이징 처리
+			// 페이지 번호를 get방식으로 가져옵니다. 저장 받아주세요 (?pageNum=번호 형식으로 받아옵니다)
+				String strPageNum = request.getParameter("pageNum");
+				
+				
+				// Q) 페이지 번호를 입력 안하고 접근하면 null이 될텐데 어떻게 처리? (= 그냥 boardList.do 로 접속 했을때는 에러남)
+				// A1) 내 답 (에러나서 잠깐 내 답으로 고침)
+				if(strPageNum == null) {
+					strPageNum = "1";
+				}
+				int pageNum = Integer.parseInt(strPageNum);
+				
+//				// A2) 선생님 답
+//				int pageNum = 0;
+//				if(strPageNum == null) {
+//					pageNum = 1;
+//				}else {
+//					pageNum = Integer.parseInt(strPageNum);
+//				}
+
+				
+				//(문제) A2로 숫자는 처리됨. 근데 만약에 못 바꾸는 문자가 들어오면? (ex. ?pageNum=dkjfdkjsl )
+				
+				// A3) (해결) 선생님 답2, try~catch로 처리하면 됨
+//				 int pageNum = 0;
+//				  try{
+//				 	pageNum = Integer.parseInt(strPageNum);
+//				 	
+//				  }catch(Exception e){
+//					pageNum = 1;
+//					
+//				  }
+				
+				
+				
+			
 			// 1. 접속시 BoardDAO 생성 (싱글턴 패턴)
 				BoardDAO dao = BoardDAO.getInstance();
 			
 			// 2. BoardDAO의 getAllBoardList() 호출해 전체 게시물 목록 받아오기
-				List<BoardVO> allList = dao.getAllBoardList();
+				List<BoardVO> allList = dao.getAllBoardList(pageNum);
 				
 			// ★ List<BoardVO> boardList를 바로 바인딩할 수도 있다.
 				request.setAttribute("allList", allList);	

@@ -10,4 +10,6 @@
 			<item value="org.eclipse.ui.Basic"/>
 		</list>
 	</section>
+	<section name="ZipFileExportWizard">
+	</section>
 </section>
