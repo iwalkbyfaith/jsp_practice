@@ -113,7 +113,7 @@ public class FrontController extends HttpServlet {
 				sv.execute(request, response);
 				ui = "/boardList.do";
 				
-			// ■ 게시판 수정 폼으로 이동하기
+			// ■ 게시판 수정 폼으로 이동하기 ★
 			}else if(uri.equals("/MyFirstWeb/boardUpdateForm.do")) {
 				sv = new BoardUpdateFormService();
 				sv.execute(request, response);

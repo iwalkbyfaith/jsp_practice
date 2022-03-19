@@ -4872,3 +4872,7 @@
 3월 18, 2022 11:12:05.907 [13960:10408:0318/111205.906:ERROR:database.cc(1777)] History SQLite error: code 1555 errno 0: UNIQUE constraint failed: context_annotations.visit_id sql: INSERT INTO context_annotations( visit_id,context_annotation_flags,duration_since_last_visit,page_end_reason,total_foreground_duration )VALUES(?,?,?,?,?)
 3월 18, 2022 11:12:22.903 [13960:4296:0318/111222.903:ERROR:database.cc(1777)] History SQLite error: code 1555 errno 0: UNIQUE constraint failed: context_annotations.visit_id sql: INSERT INTO context_annotations( visit_id,context_annotation_flags,duration_since_last_visit,page_end_reason,total_foreground_duration )VALUES(?,?,?,?,?)
 3월 18, 2022 11:12:22.905 [13960:13832:0318/111222.904:ERROR:database.cc(1777)] History SQLite error: code 1555 errno 0: UNIQUE constraint failed: context_annotations.visit_id sql: INSERT INTO context_annotations( visit_id,context_annotation_flags,duration_since_last_visit,page_end_reason,total_foreground_duration )VALUES(?,?,?,?,?)
+
+3월 19, 2022 17:40:31.325 NEW SESSION
+3월 19, 2022 17:40:31.325 [11512:8104:0319/174031.323:ERROR:device_event_log_impl.cc(214)] [17:40:31.323] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 19, 2022 17:40:31.329 [11512:8104:0319/174031.329:ERROR:device_event_log_impl.cc(214)] [17:40:31.329] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
