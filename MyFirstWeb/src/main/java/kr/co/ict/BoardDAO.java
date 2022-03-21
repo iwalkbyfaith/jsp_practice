@@ -43,7 +43,7 @@ public class BoardDAO {
 		return dao;
 	}
 	
-	
+		
 	
 	// getAllBoardList() 만들기 (다른 코드 복붙해서 수정하기)
 		// 게시판 글 전체 목록 가져오기 (회원 전체 목록 가져오기를 이용하여 수정)
@@ -110,10 +110,13 @@ public class BoardDAO {
 	
 	try {			
 		con = ds.getConnection();
-		// 쿼리문 내부에서 계산하니까 rs = null로 나와서 새로운 변수를 만들어 미리 계산해서 넣어줌 (이렇게 하니까 됨)
-		int limitNum = ((pageNum-1) * 10);
 		
-		String sql = "SELECT * FROM boardinfo ORDER BY board_num DESC limit ?, 10";
+		// 03.21 추가) Limit 뒤쪽 숫자가 페이지당 보여줄 글 개수이므로 DTO의 상수와 함께 고쳐야함.
+		
+		// 쿼리문 내부에서 계산하니까 rs = null로 나와서 새로운 변수를 만들어 미리 계산해서 넣어줌 (이렇게 하니까 됨)
+		int limitNum = ((pageNum-1) * 20); // 코드 117과 119가 같아야함
+		
+		String sql = "SELECT * FROM boardinfo ORDER BY board_num DESC limit ?, 20";
 		pstmt = con.prepareStatement(sql);
 		pstmt.setInt(1, limitNum);
 		rs = pstmt.executeQuery();
@@ -420,6 +423,45 @@ public class BoardDAO {
 		}
 	
 	
+		
+	// 03.21
+	// 페이징 처리
+		
+	// 전체 글 개수를 구해오기
+	public int getPageNum() {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int pageNum = 0;
+		
+		try {
+			
+			con = ds.getConnection();
+			
+			String sql = "SELECT COUNT(*) FROM boardinfo";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				pageNum = rs.getInt("COUNT(*)"); // "COUNT(*)" 혹은 1
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+				pstmt.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
+		
+		return pageNum;
+	}
 	
 	
 	

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import kr.co.ict.BoardDAO;
+import kr.co.ict.BoardDTO;
 import kr.co.ict.BoardVO;
 
 // BoardListService는 boardlist 접속시 사용하는 로직을 관리합니다.
@@ -66,7 +67,19 @@ public class BoardListService implements IBoardService{
 			// ★ List<BoardVO> boardList를 바로 바인딩할 수도 있다.
 				request.setAttribute("allList", allList);	
 				
+			// 03.21 페이지 버튼 생성을 위한 글 개수 확인하기
+				int boardCountNum = dao.getPageNum();
+				System.out.println("DB에 있는 전체 글 개수는 -> " + boardCountNum);
 			
+			// 아래에 DTO를 생성해주시고 바인딩(밑에 함)까지 해주세요			
+				System.out.println("boardCountNum -> " + boardCountNum);
+				System.out.println("pageNum -> " + pageNum);
+				
+				BoardDTO dto = new BoardDTO(boardCountNum, pageNum);
+				System.out.println("(서비스)BoardListService의 dto -> " + dto);
+				request.setAttribute("dto", dto);
+				
+				
 			// 03.16 추가
 				// 로그인 여부는 세션값을 저장한 다음, 바인딩해서 .jsp 페이지에서 확인합니다.
 				// 서블릿 내부에서 세션 쓰는 법
@@ -78,6 +91,9 @@ public class BoardListService implements IBoardService{
 				
 				// 세션값 체킹이 확인되면 바인딩해서 포워딩시 세션값이 같이 넘어가도록 처리
 				request.setAttribute("sId", sId);
+				
+				
+				
 		
 			
 		}

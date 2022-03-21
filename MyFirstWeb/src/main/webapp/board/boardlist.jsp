@@ -225,7 +225,9 @@
 					<button><a href="/MyFirstWeb/insertForm.do"> 글쓰기 </a></button>
 				</c:if>
 	
-	
+			<!-- 03.21 (서비스)BoardListService에서 바인딩된 정보를 하단에 디버깅 시켜주세요 -->
+			${dto}
+
 
 
 
